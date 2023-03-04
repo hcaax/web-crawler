@@ -182,7 +182,7 @@
 #             output += "*"
 #             n -= 1
 #         print(output)
-    
+
 
 # histogram([7, 9, 5, 3, 2])
 
@@ -278,7 +278,7 @@
 #         return True
 #     else:
 #         return False
-        
+
 
 # print(equalOrFive(-7, 3))
 
@@ -299,7 +299,7 @@
 # def info(name, age, addr):
 #     # print("name: {}\nage: {}\naddress: {}".format(name, age, addr))
 #     print(f"name: {name}\nage: {age}\naddress: {addr}")
-    
+
 # info("arina", 25, "tokyo")
 
 # 38 solve (x + y)*(x + y)
@@ -394,9 +394,9 @@
 
 # 55 find local IP addresses using python's stdlib
 # import socket
-# print([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] 
-# if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)), 
-# s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, 
+# print([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2]
+# if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)),
+# s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET,
 # socket.SOCK_DGRAM)]][0][1]]) if l][0][0])
 
 # 57 get the execution time of a Python method.
@@ -565,3 +565,246 @@
 # import sys
 # print(sys.getrecursionlimit())
 
+# 81 concatnate N strings
+# list_of_colors = ["red", "blue", "yellow"]
+# colors = "-".join(list_of_colors)
+# print(colors)
+
+# print("Concatenating With the + Operator:")
+# list_of_colors = ['Red', 'White', 'Black']
+# colors = list_of_colors[0]+'-'+list_of_colors[1]+'-'+list_of_colors[2]
+# print("All Colors: "+colors)
+
+# 82 calculate the sum of all items of container(tuple, list, set, dictionary)
+# def mySum(item):
+#     sum = 0
+#     for i in item:
+#         sum += i
+#     return sum
+
+
+# list1 = [10, 20, 30]
+# list1 = (10, 20, 30)
+# print(mySum(list1))
+
+# dict1 = {"a": 11, "b": 22, "c": 33}
+# print(dict1["a"])
+
+
+# def dict_sum(nums):
+#     num_sum = 0
+#     for i in nums:
+#         print(i)
+#         num_sum += nums[i]
+#     return num_sum
+
+
+# print(dict_sum(dict1))
+
+# tuple1 = (10, 20, 30)
+# print(sum(tuple1))
+# set1 = {12, 13, 14}
+# print(sum(set1))
+
+# 83 test whether all numbers in a list are greater than a certain number
+# def greater(nums, c):
+#     for num in nums:
+#         if num <= c:
+#             return False
+#     return True
+
+
+# print(greater([10, 20, 30], 10))
+# num = [2, 3, 4, 5]
+# print(all(x > 3 for x in num))
+
+# 84 count the number of occurrences of a specific character in a string
+# def count(string, c):
+#     count = 0
+#     for s in string:
+#         if s == c:
+#             count += 1
+#     return count
+
+# print(count("this is a string", "h"))
+# print("this is a text".count("t"))
+
+# 85 check whether a file path is a file or diectory
+# import os
+# path = "google.py"
+# if os.path.isdir(path):
+#     print(path + " is a directory")
+# elif os.path.isfile(path):
+#     print(path + " is a file")
+
+# def test(x, y, z):
+#     return x if x <= y and x <= z else y if y <= x and y <= z else z
+# print(test(1123, 254668, 3454))
+
+# 86 get the ASCII value of a character
+# print(ord("A"))
+
+# 87 get the size of a file
+# import os
+# print(os.path.getsize("google.py"), "Bytes")
+
+# file_size = os.stat("google.py")
+# print(file_size.st_size)
+
+# 88 given variables x = 30 and y = 20, to print "30 + 20 = 50"
+# x, y = 30, 20
+# print("%d + %d = %d" % (x, y, x + y))
+# print(f"{x} + {y} = {x+y}")
+# print("{0} + {1} = {2}".format(x, y, x + y))
+
+# 89 given a varialbe name, if the values is 1 , display the string and do nothing if the value is not equal
+# n = 1
+# if n == 1:
+#     print("first day of a month")
+
+# 90 create of a copy of its own source code
+# def file_copy(src, dest):
+#     with open(src) as f, open(dest, "w") as d:
+#         d.write(f.read())
+
+
+# file_copy("y.py", "z.py")
+
+# 91 swap two variables
+# def swap(a, b):
+#     temp = a
+#     a = b
+#     b = temp
+#     print(a, b)
+
+
+# a, b = 10, 20
+# swap(10, 20)
+
+# 92 define a string containing special character in various form
+# print("\#{'}${\"}@/")
+
+# 93 get the identity, type, and value of an object
+# x = 35
+# print("identity: ", x, "type: ", type(x), "id: ", id(x))
+
+# 94 convert the bytes in a given string to a list of integers
+# x = b"abcdefghijklmnopqrstuvwxyz"
+# y = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# print(list(x))
+# print(list(y))
+
+# print(list(b"0123456789"))
+
+# 95 check whether a string is numeric
+# str = "123ddd3"
+# try:
+#     i = float(str)
+#     print("numeric")
+# except(ValueError, TypeError):
+#     print("not numeric")
+
+# 96 print the current call stack
+# import traceback
+# def f1(): return abc()
+# def abc(): traceback.print_stack()
+# f1()
+
+# 97 list the special variables used in the language
+# s_var_names = sorted((set(globals().keys()) | set(
+#     __builtins__.__dict__.keys())) - set('_ names i'.split()))
+# print()
+# print('\n'.join(' '.join(s_var_names[i:i+8])
+#       for i in range(0, len(s_var_names), 8)))
+# print()
+
+# 98 get the system time
+# import datetime
+# import time
+# print(time.ctime())
+# print(datetime.datetime.now())
+
+# 99 clear the screen or terminal
+# import os
+# import time
+# os.system("cls")
+# time.sleep(1)
+
+# 100 get the name of the host on which the routine is running
+# import os
+# import platform
+# import socket
+# print(socket.gethostname())
+
+# print(platform.uname()[1])
+
+# print(34//6 % 3)
+# print(34//4/2)
+# print(9*((5*12)-8))
+
+# 101 access and print a url's content to the console
+# from http.client import HTTPConnection
+# import requests
+# data = requests.get("https://www.example.com/")
+# print(data.text)
+
+# conn = HTTPConnection("example.com/")
+# conn.request("GET", "/")
+# result = conn.getresponse()
+# content = result.read()
+# print(content)
+
+# 102 get system command output
+# import subprocess
+# return_text = subprocess.check_output(
+#     "dir", shell=True, universal_newlines=True)
+# print(return_text)
+
+# 103 extract the filename from a given path
+# import os
+# path = os.path.abspath("./google.py")
+# print(os.path.basename(path))
+
+# 104 get the effective group id, effective user id, real group id, and a list of supplemental group ids associated with the current porcess
+# import os
+# print("\nEffective group id: ", os.getegid())
+# print("Effective user id: ", os.geteuid())
+# print("Real group id: ", os.getgid())
+# print("List of supplemental group ids: ", os.getgroups())
+
+# 105 get the users environment
+# import os
+# import pprint
+# u_env_var = os.environ
+# print(u_env_var)
+# pprint.pprint(dict(u_env_var), width=1)
+
+# 106 divide a path by the extension separator
+# import os.path
+# print(os.path.splitext("abc.txt"))
+# for path in ['test.txt', 'filename', '/user/system/test.txt']:
+#     print('"%s" :' % path, os.path.splitext(path))
+
+# 107 retrieve file properties
+# import os.path
+# import time
+# print(__file__)
+# print(time.ctime(os.path.getatime(__file__)))
+# print(time.ctime(os.path.getmtime(__file__)))
+# print(time.ctime(os.path.getctime(__file__)))
+# print(os.path.getsize(__file__))
+
+# 108 find the path to a file or directory when you encounter a path name
+# import os.path
+# for file in [__file__, os.path.dirname(__file__), '/', "./broken_link"]:
+#     print(file)
+#     print(os.path.isabs(file))
+#     print(os.path.isdir(file))
+#     print(os.path.islink(file))
+#     print(os.path.exists(file))
+#     print(os.path.lexists(file))
+
+# 109 check if a number is positive, negative or zero
+num = -5
+print("num is positive" if num >
+      0 else "num is negative" if num < 0 else "num is zero")
