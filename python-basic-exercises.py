@@ -805,6 +805,264 @@
 #     print(os.path.lexists(file))
 
 # 109 check if a number is positive, negative or zero
-num = -5
-print("num is positive" if num >
-      0 else "num is negative" if num < 0 else "num is zero")
+# num = 5
+# print("num is positive" if num >
+#       0 else "num is negative" if num < 0 else "num is zero")
+
+# 110 get numbers divisible by fitteen from a list using an anonymous funtion
+# num_list = [45, 55, 60, 37, 100, 105, 220]
+# print(list(filter(lambda x : (x%15 == 0), num_list)))
+
+# 111 make file lists from the current directory using a wildcard
+# import glob
+# file_list = glob.glob("*[a-z]*.py")
+# print(file_list)
+
+# from pathlib import Path
+# for path in Path("./").glob("[a-z].*"):
+#     print(path)
+
+# 112 remove the first item from a specified list
+# item_list = ['x', 'y', 'z', 'j', 'k', 'l']
+# del item_list[0]
+# print(item_list)
+
+# new_item_list = item_list[1:]
+# print(new_item_list)
+# new_item_list.remove("z")
+# print(new_item_list)
+
+# def tail(lst):
+#     return lst[1:]
+
+# print(tail(new_item_list))
+
+# 113 inputs a number and generates an error is it is not a number
+# solution1
+# while True:
+#     try:
+#         a = int(input("input a number: "))
+#         break
+#     except ValueError:
+#         print("not a number")
+
+# solution2
+# x = 1
+# x_int = x.is_integer()
+# print(x_int)
+
+# solution3
+# x = 1.0
+# x_int = isinstance(x, int)
+# print(x_int)
+
+# 114 filter positive numbers from a list
+#solution1
+# num_list = [6, -3, 9, 4, -7, 5, -3]
+# new_nums = list(filter(lambda x: x > 0, num_list))
+# print(new_nums)
+
+# new_list = []
+# for num in num_list:
+#     if num > 0:
+#         print(num, end=" ")
+
+# print([n for n in num_list if n > 0])
+
+# 115 compute the product of a list of integers(without using a for loop)
+# from functools import reduce
+# nums = [10, 20, 30, 40, 50, 60, 70]
+# nums_add = reduce(lambda x,y: x + y, nums)
+# print(nums_add)
+
+# 116 print unicode characters
+# str = '\u0050\u0079\u0074\u0068\u006f\u006e \u0045\u0078\u0065\u0072\u0063\u0069\u0073\u0065\u0073 \u002d \u0077\u0033\u0072\u0065\u0073\u006f\u0075\u0072\u0063\u0065'
+# print(str)
+# print('\u0050\u0060')
+# x = ['ab', 'cd']
+# new_x = []
+# for i in x:
+#     new_x.append(i.upper())
+#     print(new_x, end='')
+
+# 117 prove that two string variables of the same value point to the same memory location
+# a = 10
+# b = 10
+# print(hex(id(a)))
+# print(hex(id(b)))
+
+# 118 create a bytearray from a list
+# nums = [10, 20, 30, 40, 50]
+# values = bytearray(nums)
+# for x in values:print(x)
+
+# 119 round a floating-point number to a specified number of decimal places
+# num = 14.365
+# print('the origin num is %f'% num)
+# print('the new num is %.2f' % num)
+# print("{:0.3f}".format(num))
+
+# 120 format a specified string and limit the length of a string
+# str_num = "1234567890"
+# print('%.6s'% str_num)
+# print('%.3s' % str_num)
+
+# 121 determine if a variable is defined or not
+# try:
+#     x = 1
+#     print("x = 1")
+# except NameError:
+#     print("not defined")
+# else:
+#     print("is defined")
+
+# 122 empty a variable without destorying it
+# n = 20
+# d = {"x":20}
+# l = [1, 3, 5]
+# t = (3, 5, 7)
+# print(type(n)())
+# print(type(d)())
+# print(type(l)())
+# print(type(t)())
+
+# def empty_var(lst):
+#     return [type(i)() for i in lst]
+
+# lst = ["apple", {"x":20}, [1, 3, 5], (3, 5, 7), 100]
+# print(empty_var(lst))
+
+# 123 detemine the largest and smallest integers, lones, and floats
+# import sys
+# print(sys.int_info)
+# print(sys.maxsize)
+
+# 124 check whether multiple variables have the same value
+# x, y, z = 10, 20, 30
+# if x == y and y == z:
+#     print("all variables have the same value")
+# else:
+#     print("they are not the same")
+
+# 125 sum the counts in a collection
+# import collections
+
+# nums = [10, 20, 30]
+# print(sum(collections.Counter(nums).values()))
+# print(len(nums))
+
+# 126 get the actual module object for a given object
+
+# from inspect import getmodule
+# print(getmodule(getmodule))
+# def add(x, y):
+#     return x + y
+# print(getmodule(add))
+
+# 127 check whether an integer fits in 64 bits
+# int_val = 30
+# if int_val.bit_length() <= 63:
+#     print((-2**63).bit_length())
+#     print((2**63).bit_length())
+    
+# 128 check whether lowercase letters exist in a string
+# text = "ABCDEFiGHIJKL"
+# print(any(c.islower() for c in text))
+# def check(text):
+#     flag = 0
+#     for i in text:
+#         if (ord(i) >= 97 and ord(i) <= 122):
+#             flag += 1
+#     if (flag > 0):
+#         return True
+#     else:
+#         return False
+# print(check(text))
+
+# 129 add leading zeros to a string
+# str1 = "abc"
+# print(str1.ljust(10, "x"))
+# print(str1.rjust(10, "x"))
+# print('{:>8}'.format(str1))
+
+# 130 uses double quotes to display strings
+# import json
+# print(json.dumps({'alex':1, 'suresh':2, 'agnessa':3}))
+
+# 131 split a varialbe length string into varialbes
+# var_list = ['a', 'b', 'c']
+# x, y, z = (var_list + [None]*3)[0:3]
+# print(x, y, z)
+
+# 132 list the home directory without an absolute path
+# import os.path
+# print(os.path.expanduser('~'))
+
+# 133 calculate the time runs(difference between start and current time)of a program
+# from timeit import default_timer
+# def timer(n):
+#     start = default_timer()
+#     # some code here
+#     for row in range(0, n):
+#         print(row)
+#     print(default_timer() - start)
+
+# timer(5)
+
+# 134 input two integers on a single line
+# x, y = map(int, input().split())
+# print(x, y)
+
+# a, b = [int(a) for a in input("Input the value of a & b: ").split()]
+# print("The value of a & b are:",a,b)
+
+# 135 print a variable without spaces between values
+# x = 30
+# print('Value of x is "{}"'.format(x))
+# print('value is "%i"' %x)
+# print("value is " + '\"' + str(x) + '\"')
+
+# 136 find files and skip directories in a given directory
+# import os
+# print([f for f in os.listdir('./') if os.path.isfile(os.path.join("./", f))])
+
+# user_path = 'd:/'
+# for fname in os.listdir(user_path):
+#    path = os.path.join(user_path, fname)
+#    if os.path.isdir(path):
+#        # skip directories
+#        continue
+#    print(fname)
+
+# 137 extract a single key-value pair from a directory into variables
+# d = {'Red': 'Green'}
+# (c1, c2), = d.items()
+# print(c1)
+# print(c2)
+
+# 138 convert True to 1 and False to zero
+# x = 'true'
+# x = int(x == 'true')
+# print(x)
+# x = 'abcd'
+# x = int(x == "true")
+# print(x)
+
+# 139 validate an IP address
+# import socket
+# addr = '127.0.0.999'
+# try:
+#     socket.inet_aton(addr)
+#     print("valid IP")
+# except socket.error:
+#     print('invalid IP')
+
+# 140 convert an integer to binary that keeps leading zeros
+# x = 12
+# print(format(x, '010b'))
+
+# 141 convert decimal to hexdecimal
+# x = 30
+# print(format(x, '02x'))
+
+
