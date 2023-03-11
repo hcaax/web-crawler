@@ -857,7 +857,7 @@
 # print(x_int)
 
 # 114 filter positive numbers from a list
-#solution1
+# solution1
 # num_list = [6, -3, 9, 4, -7, 5, -3]
 # new_nums = list(filter(lambda x: x > 0, num_list))
 # print(new_nums)
@@ -964,7 +964,7 @@
 # if int_val.bit_length() <= 63:
 #     print((-2**63).bit_length())
 #     print((2**63).bit_length())
-    
+
 # 128 check whether lowercase letters exist in a string
 # text = "ABCDEFiGHIJKL"
 # print(any(c.islower() for c in text))
@@ -1065,4 +1065,115 @@ print(format(x, '010b'))
 # x = 30
 # print(format(x, '02x'))
 
+# 142 check if every consecutive sequence of zeros is followed by a consecutive sequence of ones of same length in a given string.Return True/False
+# def test(str1):
+#     while '01' in str1:
+#         str1 = str1.replace('01', '')
+#     return len(str1) == 0
 
+
+# str1 = "01010000"
+# print(test(str1))
+
+# 143 detemine if the python shell is executing in 32-bit or 64-bit mode on the operating system
+# import struct
+# print(struct.calcsize("p")*8)
+
+# 144 check whether a variable is an integer or a string
+# print(isinstance((1, 2, 3), tuple))
+# print(isinstance([1, 2, 3], list))
+# print(0 or 2 or 3)
+
+# 145 test if a variable is a list, tuple, or set
+# v = {"a": 1}
+# if isinstance(v, list):
+#     print("v is a list")
+# elif isinstance(v, tuple):
+#     print("v is a tuple")
+# elif isinstance(v, set):
+#     print("v is a set")
+
+# 146 find the location of python module sources
+# import sys
+# import os
+# import imp
+# print(imp.find_module("os"))
+# print(imp.find_module("sys"))
+# print(os.path)
+# print(sys.path)
+
+# 147 check whether a number is divisible by another number
+# def divisible(a, b):
+#     if a % b == 0:
+#         return True
+#     elif b % a == 0:
+#         return True
+
+
+# print(divisible(5, 10))
+
+# 148 find the maximum and minimum numbers from a sequence of numbers
+# max = 0
+# min = 9999
+# list = [12, 23, 35, 44, 57]
+# for i in list:
+#     if i > max:
+#         max = i
+#     if i < min:
+#         min = i
+# print(max)
+# print(min)
+
+
+# def max_min(data):
+#     max = data[1]
+#     min = data[1]
+#     for num in data:
+#         if num > max:
+#             max = num
+#         if num < min:
+#             min = num
+#     return max, min
+
+
+# print(max_min([3, 16, 0.6, 39, 55]))
+
+# 149 takes a positive integer and returns the sum of the cube of all positive integers smaller than the specified number
+# def sum_of_cubes(n):
+#     n -= 1
+#     total = 0
+#     while n > 0:
+#         total += n**3
+#         n -= 1
+#     return total
+
+
+# print(sum_of_cubes(6))
+
+
+# def sum_of_cubes1(n):
+#     if n < 0:
+#         raise ValueError("n must be positive number")
+#     return n*n(n*n-2*n+1)/4
+
+
+# print(sum_of_cubes1(6))
+
+
+# 150
+def odd_product(nums):
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if i != j:
+                product = nums[i] * nums[j]
+                if product & 1:
+                    return True
+    return False
+
+
+dt1 = [2, 4, 6, 8]
+dt2 = [1, 6, 4, 7, 8]
+dt3 = [1, 3, 5, 7, 9]
+print(dt1, odd_product(dt1))
+print(dt2, odd_product(dt2))
+print(dt3, odd_product(dt3))
