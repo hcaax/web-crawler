@@ -1058,8 +1058,8 @@
 #     print('invalid IP')
 
 # 140 convert an integer to binary that keeps leading zeros
-# x = 12
-# print(format(x, '010b'))
+x = 12
+print(format(x, '010b'))
 
 # 141 convert decimal to hexdecimal
 # x = 30
