@@ -41,3 +41,43 @@
 #       'sfsdfde', 'sfsd', 'sfsdf', 'qwsfsdfrew']))
 
 # 6 test a list of one hundred integers
+
+# 7 check a given list of integers where the sum of the first i integers is i
+# print(sum([1, 2, 3, 4, 5][:1]) == 1)
+
+# I = list("java")
+# p = I[0], I[-1], I[1:3]
+# print(type(p))
+
+# print('{0:.2f}'.format(1/3.0))
+
+# print('%x %d' %(255, 255))
+# import re
+# str1 = "yes i am the hero"
+# str2 = str1.split(' ', 1)
+# print(str2)
+# print([1, 2, 3, 4, 5, 6][0::2])
+# import re
+# string= "臺中市南屯區埔興段35-12地號"
+# regex = re.compile(r'段(\d+-*\d)')
+# match = regex.search(string)
+# print(match.group(1))
+
+def test(string):
+    import re
+    merged = re.split(r"([ ,]+)", string)
+    return [merged[::2], merged[1::2]]
+s = "W3resource Python, Exercises."
+print("Original string:",s)
+print("Split the said string into 2 lists: words and separators:")
+print(test(s))
+# s = "The dance, held in the school gym, ended at midnight."
+# print("\nOriginal string:",s)
+# print("Split the said string into 2 lists: words and separators:")
+# print(test(s))
+# s = "The colors in my studyroom are blue, green, and yellow."
+# print("\nOriginal string:",s)
+# print("Split the said string into 2 lists: words and separators:")
+# print(test(s))
+
+# regex101.com regexone.com
